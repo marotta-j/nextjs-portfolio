@@ -5,9 +5,10 @@ import {
   CardFooter,
 } from "@/components/ui/card"
 import { useEffect, useRef, useState } from "react";
-import { Mail } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 import Link from "next/link";
 import { GrLinkedin, GrGithub } from "react-icons/gr";
+import { Button } from "@/components/ui/button";
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -69,6 +70,16 @@ export default function ContactSection() {
 
           </CardFooter>
         </Card>
+  
+        <div className="flex flex-col items-center p-5 pt-10">
+          <Button asChild>
+            <Link className="text-muted-foreground" href="https://github.com/marotta-j/nextjs-portfolio" target="_blank">
+              Source Code
+              <ExternalLink />
+            </Link>
+          </Button>
+        </div>
+
       </div>
     </section>
   );

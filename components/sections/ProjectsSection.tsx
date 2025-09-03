@@ -16,7 +16,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { useEffect, useRef, useState } from "react";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "../ui/button";
 import { SiAmazonwebservices, SiDjango, SiTypescript } from "react-icons/si";
 import { FaPython } from "react-icons/fa";
@@ -24,6 +24,7 @@ import { TbBrandReactNative } from "react-icons/tb";
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { CgVercel } from "react-icons/cg";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProjectsSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -100,8 +101,11 @@ export default function ProjectsSection() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button>
-                      Learn more
+                    <Button asChild>
+                      <Link href="https://missedconnections.tech/" target="_blank">
+                        Learn more
+                        <ExternalLink />
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -134,8 +138,11 @@ export default function ProjectsSection() {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button>
-                      Learn more
+                    <Button asChild>
+                      <Link href="https://github.com/marotta-j/easyPoll" target="_blank">
+                        GitHub
+                        <ExternalLink />
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
@@ -161,8 +168,11 @@ export default function ProjectsSection() {
 
                   </CardContent>
                   <CardFooter>
-                    <Button>
-                      Learn more
+                    <Button asChild>
+                      <Link href="https://github.com/marotta-j/nextjs-portfolio" target="_blank">
+                        GitHub
+                        <ExternalLink />
+                      </Link>
                     </Button>
                   </CardFooter>
                 </Card>
