@@ -15,7 +15,7 @@ export default function IntroSection() {
             id="intro" 
             className="h-screen w-full flex flex-col items-center justify-center bg-background snap-start"
         >
-            <div className="flex flex-row gap-3">
+            <div className="flex flex-row gap-3 animate-in fade-in slide-in-from-bottom duration-[2s]">
                 <Image
                     src={"/headshot.png"} 
                     alt="Headshot photo"
@@ -24,8 +24,8 @@ export default function IntroSection() {
                     className="w-14 h-14 rounded-full object-cover border-2 border-none shadow-md "
                 />
                 <div className="mb-10">
-                    <h1 className="text-muted-foreground text-sm animate-in fade-in slide-in-from-bottom duration-[2s] font-bold">Hi 👋, my name is</h1>
-                    <h1 className="text-white text-4xl animate-in fade-in slide-in-from-bottom duration-[2s] font-bold">Joseph Marotta</h1>
+                    <h1 className="text-muted-foreground text-sm font-bold">Hi 👋, my name is</h1>
+                    <h1 className="text-white text-4xl font-bold">Joseph Marotta</h1>
                 </div>
             </div>
             
