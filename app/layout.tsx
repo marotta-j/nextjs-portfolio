@@ -29,9 +29,10 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background`}
       >
-        <div className="animate-in fade-in duration-[2s] flex flex-row p-5 absolute top-0 left-0 w-full justify-center gap-10">
+        {/* nav bar links */}
+        <div className="z-100 animate-in fade-in duration-[2s] flex flex-row p-5 absolute top-0 left-0 w-full justify-center gap-10">
           <Link href="#background">Background</Link>
           <Link href="#projects">Projects</Link>
           <Link href="#contact">Contact</Link>

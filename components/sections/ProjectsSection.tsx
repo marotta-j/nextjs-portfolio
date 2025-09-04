@@ -46,8 +46,11 @@ export default function ProjectsSection() {
     <section
       id="projects"
       ref={ref}
-      className={`h-screen p-3 w-full flex flex-col items-center justify-center bg-background snap-start`}
+      className={`relative h-screen p-3 w-full flex flex-col items-center justify-center snap-start`}
     >
+      {/* background gradient */}
+      <div className={`absolute -z-2 rounded-full border-[200px] md:border-[220px] border-b-cyan-400 border-l-rose-600 border-r-indigo-500 border-t-blue-400 blur-[300px] opacity-20 ${visible ? "animate-in fade-in duration-[3s]" : "opacity-0"}`} />
+      
       <div className={`flex flex-col items-center space-y-3 ${visible ? "animate-in fade-in slide-in-from-bottom duration-[2s]" : "opacity-0"}`}>
         <h1 className={`text-3xl font-bold`}>Projects</h1>
         <div className="gap-3 flex flex-row w-full justify-evenly py-3">
@@ -62,7 +65,7 @@ export default function ProjectsSection() {
         </div>
 
 
-        <Carousel className="w-full max-w-xs md:max-w-md" opts={{ loop: true }}>
+        <Carousel className="w-full max-w-2xs sm:max-w-md" opts={{ loop: true }}>
           <CarouselContent>
 
             <CarouselItem>
@@ -71,7 +74,7 @@ export default function ProjectsSection() {
                   <CardHeader>
                     <CardTitle>MissedConnections</CardTitle>
                     <CardDescription>
-                      A full-stack iOS application for Boston University freshman to effortlessly make new connections on campus. Created with React Native and Django.
+                      A full-stack iOS application for Boston University students to effortlessly make new connections on campus. Created with React Native and Django.
                     </CardDescription>
                     <CardAction className="flex flex-row space-x-2">
                       <SiTypescript />
@@ -102,7 +105,11 @@ export default function ProjectsSection() {
                   </CardContent>
                   <CardFooter>
                     <Button asChild>
-                      <Link href="https://missedconnections.tech/" target="_blank">
+                      <Link
+                        href="https://missedconnections.tech/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Learn more
                         <ExternalLink />
                       </Link>
@@ -139,7 +146,11 @@ export default function ProjectsSection() {
                   </CardContent>
                   <CardFooter>
                     <Button asChild>
-                      <Link href="https://github.com/marotta-j/easyPoll" target="_blank">
+                      <Link
+                        href="https://github.com/marotta-j/easyPoll"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         GitHub
                         <ExternalLink />
                       </Link>
@@ -164,12 +175,24 @@ export default function ProjectsSection() {
                       <CgVercel />
                     </CardAction>
                   </CardHeader>
-                  <CardContent className="flex items-center justify-center p-6">
-
+                  <CardContent className="flex flex-row flex-wrap w-full items-center justify-center p-6">
+                    <div className="h-[200px] w-full max-w-[300px]">
+                      <Image
+                        src="/next.svg"
+                        alt="Photo of web app"
+                        width={200}
+                        height={200}
+                        className="object-contain w-full h-full invert"
+                      />
+                    </div>
                   </CardContent>
                   <CardFooter>
                     <Button asChild>
-                      <Link href="https://github.com/marotta-j/nextjs-portfolio" target="_blank">
+                      <Link
+                        href="https://github.com/marotta-j/nextjs-portfolio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         GitHub
                         <ExternalLink />
                       </Link>

@@ -27,8 +27,10 @@ export default function BackgroundSection() {
     <section
       id="background"
       ref={ref}
-      className="min-h-screen w-full flex flex-col items-center justify-center bg-background snap-start"
+      className="relative min-h-screen w-full flex flex-col items-center justify-center snap-start"
     >
+      {/* background gradient */}
+      <div className={`absolute -z-2 rounded-full border-[200px] border-b-cyan-400 border-l-rose-600 border-r-indigo-500 border-t-blue-400 blur-[300px] opacity-20 ${visible ? "animate-in fade-in duration-[3s]" : "opacity-0"}`} />
       <div className={`flex flex-col items-center ${visible ? "animate-in fade-in slide-in-from-bottom duration-[2s]" : "opacity-0"}`}>
         <div className="mb-10">
           <h1 className={`text-3xl font-bold`}>Background</h1>

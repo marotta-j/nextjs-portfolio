@@ -26,12 +26,23 @@ export default function ContactSection() {
     }
   }, [])
 
+  const [email, setEmail] = useState("");
+
+  useEffect(() => {
+    const user = "marottaj";
+    const domain = "bu.edu";
+    setEmail(`${user}@${domain}`);
+  }, []);
+
   return (
     <section
       id="contact"
       ref={ref}
-      className={`h-screen p-3 w-full flex flex-col items-center justify-center bg-background snap-start`}
+      className={`relative h-screen p-3 w-full flex flex-col items-center justify-center snap-start`}
     >
+      {/* background gradient */}
+      <div className={`absolute -z-2 rounded-full border-[150px] border-b-cyan-400 border-l-rose-600 border-r-indigo-500 border-t-blue-400 blur-[300px] opacity-20 ${visible ? "animate-in fade-in duration-[3s]" : "opacity-0"}`} />
+      
       <div className={`flex flex-col items-center ${visible ? "animate-in fade-in slide-in-from-bottom duration-[2s]" : "opacity-0"}`}>
         <div className="mb-10">
           <h1 className={`text-3xl font-bold`}>Thank you for reading my portfolio!</h1>
@@ -46,6 +57,7 @@ export default function ContactSection() {
               <Link
                 href="https://www.linkedin.com/in/marotta-joseph/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-blue-600 transition-colors"
               >
                 <GrLinkedin size={22} />
@@ -54,14 +66,14 @@ export default function ContactSection() {
               <Link
                 href="https://github.com/marotta-j"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="hover:text-purple-500 transition-colors"
               >
                 <GrGithub size={22} />
               </Link>
 
               <Link
-                href="mailto:marottaj@bu.edu"
-                target="_blank"
+                href={`mailto:${email}`}
                 className="hover:text-red-700 transition-colors"
               >
                 <Mail size={22} />
@@ -73,7 +85,12 @@ export default function ContactSection() {
   
         <div className="flex flex-col items-center p-5 pt-10">
           <Button asChild>
-            <Link className="text-muted-foreground" href="https://github.com/marotta-j/nextjs-portfolio" target="_blank">
+            <Link 
+              className="text-muted-foreground" 
+              href="https://github.com/marotta-j/nextjs-portfolio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Source Code
               <ExternalLink />
             </Link>
